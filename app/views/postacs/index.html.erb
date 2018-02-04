@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Postacs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lvl</th>
+      <th>Maglvl</th>
+      <th>Atk</th>
+      <th>Def</th>
+      <th>Magic</th>
+      <th>Speed</th>
+      <th>Klasa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postacs.each do |postac| %>
+      <tr>
+        <td><%= postac.name %></td>
+        <td><%= postac.lvl %></td>
+        <td><%= postac.maglvl %></td>
+        <td><%= postac.atk %></td>
+        <td><%= postac.def %></td>
+        <td><%= postac.magic %></td>
+        <td><%= postac.speed %></td>
+        <td><%= postac.klasa.name %></td>
+        <td><%= link_to 'Show', postac %></td>
+        <td><%= link_to 'Edit', edit_postac_path(postac) %></td>
+        <td><%= link_to 'Destroy', postac, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Postac', new_postac_path %>

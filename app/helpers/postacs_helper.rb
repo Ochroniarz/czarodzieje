@@ -1,0 +1,2 @@
+module PostacsHelper
+end

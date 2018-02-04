@@ -1,0 +1,57 @@
+<%= form_with(model: postac, local: true) do |form| %>
+  <% if postac.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(postac.errors.count, "error") %> prohibited this postac from being saved:</h2>
+
+      <ul>
+      <% postac.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :postac_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lvl %>
+    <%= form.number_field :lvl, id: :postac_lvl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :maglvl %>
+    <%= form.number_field :maglvl, id: :postac_maglvl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :atk %>
+    <%= form.number_field :atk, id: :postac_atk %>
+  </div>
+
+  <div class="field">
+    <%= form.label :def %>
+    <%= form.number_field :def, id: :postac_def %>
+  </div>
+
+  <div class="field">
+    <%= form.label :magic %>
+    <%= form.number_field :magic, id: :postac_magic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speed %>
+    <%= form.number_field :speed, id: :postac_speed %>
+  </div>
+
+	<div class="field">
+    <%= form.label :Klasa_id %>
+    <%= form.collection_select :klasa_id, Klasa.order(:name), :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

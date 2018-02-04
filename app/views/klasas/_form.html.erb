@@ -1,0 +1,32 @@
+<%= form_with(model: klasa, local: true) do |form| %>
+  <% if klasa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(klasa.errors.count, "error") %> prohibited this klasa from being saved:</h2>
+
+      <ul>
+      <% klasa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :klasa_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :klasa_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :specialatk %>
+    <%= form.text_field :specialatk, id: :klasa_specialatk %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

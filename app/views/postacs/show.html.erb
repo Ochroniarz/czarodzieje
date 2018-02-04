@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @postac.name %>
+</p>
+
+<p>
+  <strong>Lvl:</strong>
+  <%= @postac.lvl %>
+</p>
+
+<p>
+  <strong>Maglvl:</strong>
+  <%= @postac.maglvl %>
+</p>
+
+<p>
+  <strong>Atk:</strong>
+  <%= @postac.atk %>
+</p>
+
+<p>
+  <strong>Def:</strong>
+  <%= @postac.def %>
+</p>
+
+<p>
+  <strong>Magic:</strong>
+  <%= @postac.magic %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @postac.speed %>
+</p>
+
+<p>
+  <strong>Klasa:</strong>
+  <%= @postac.klasa %>
+</p>
+
+<%= link_to 'Edit', edit_postac_path(@postac) %> |
+<%= link_to 'Back', postacs_path %>
